@@ -13,10 +13,10 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/alien/
-Requires:	cpio
-Requires:	%{_bindir}/rpm2cpio
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+Requires:	cpio
+Requires:	%{_bindir}/rpm2cpio
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
