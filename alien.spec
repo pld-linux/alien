@@ -2,8 +2,8 @@
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	7.24
-Release:	2
+Version:	8.15
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
@@ -23,9 +23,9 @@ convert into Slackware, Debian, and Stampede packages. This is a tool
 only suitable for binary packages.
 
 %description -l pl
-Alien pozwala Ci przekonwertowaæ pakiety Debiana, Stampede oraz
+Alien pozwala przekonwertowaæ pakiety Debiana, Stampede oraz
 Slackware w pakiety u¿ywane w PLD, które mog± byæ zainstalowane przy
-u¿yciu rpm'a i odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla
+u¿yciu rpm-a i odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla
 pakietów binarnych.
 
 %prep
@@ -48,14 +48,12 @@ install blib/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz
+%doc README
 %attr(755,root,root) %{_bindir}/alien
 %{_datadir}/alien
 %{perl_sitelib}/Alien
