@@ -13,15 +13,16 @@ Vendor:		Joey Hess <joey@kitenet.net>
 Buildarch:	noarch
 
 %description
-Alien allows you to convert Debian, Stampede and Slackware Packages into
-PLD packages, which can be installed with rpm. It can also convert into
-Slackware, Debian, and Stampede packages. This is a tool only suitable for
-binary packages.
+Alien allows you to convert Debian, Stampede and Slackware Packages
+into PLD packages, which can be installed with rpm. It can also
+convert into Slackware, Debian, and Stampede packages. This is a tool
+only suitable for binary packages.
 
 %description -l pl
-Alien pozwala Ci przekonwertowaæ pakiety Debiana, Stampede oraz Slackware w
-pakiety u¿ywane w PLD, które mog± byæ zainstalowane przy u¿yciu rpm'a i
-odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla pakietów binarnych.
+Alien pozwala Ci przekonwertowaæ pakiety Debiana, Stampede oraz
+Slackware w pakiety u¿ywane w PLD, które mog± byæ zainstalowane przy
+u¿yciu rpm'a i odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla
+pakietów binarnych.
 
 %prep
 %setup -q -n %{name}
