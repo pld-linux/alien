@@ -3,12 +3,13 @@ Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
 Version:	7.24
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
 Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
+Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
 Vendor:		Joey Hess <joey@kitenet.net>
@@ -47,6 +48,8 @@ install -d $RPM_BUILD_ROOT/{%{perl_archlib},%{perl_sitelib},%{perl_sitearch}} \
 install blib/man1/* $RPM_BUILD_ROOT%{_mandir}/man1
 install blib/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
 
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+
 gzip -9nf README
 
 %clean
@@ -59,3 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/alien
 %{perl_sitelib}/Alien
 %{_mandir}/man*/*
+%lang(fr) %{_mandir}/fr/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
