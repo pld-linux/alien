@@ -1,13 +1,16 @@
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	6.44
+Version:	7.5
 Release:	1
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source0:	http://kitenet.net/programs/alien/%{name}.tar.gz
+Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
+Patch0:	alien-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
+BuildRequires: perl
+Requires: perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vendor:		Joey Hess <joey@kitenet.net>
 Buildarch:	noarch
@@ -26,20 +29,23 @@ pakietów binarnych.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
+
+%build
+perl Makefile.PL
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-umask 022
 make DESTDIR=$RPM_BUILD_ROOT install
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README CHANGES
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,CHANGES}.gz
+%doc README.gz
 %attr(755,root,root) %{_bindir}/alien
 %attr(-,root,root) %{_datadir}/alien
 %{_mandir}/man*/*
