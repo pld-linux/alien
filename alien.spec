@@ -39,7 +39,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{perl_sitearch},%{perl_sitelib}}
-make DESTDIR=$RPM_BUILD_ROOT install
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README
 
 %clean
