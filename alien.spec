@@ -11,6 +11,8 @@ Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
+Requires:	cpio
+Requires:	%{_bindir}/rpm2cpio
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildArch:	noarch
