@@ -7,9 +7,9 @@ License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
-Patch0:	alien-DESTDIR.patch
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
-BuildRequires: perl
+BuildRequires:	perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vendor:		Joey Hess <joey@kitenet.net>
 Buildarch:	noarch
