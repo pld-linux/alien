@@ -35,7 +35,6 @@ pakietów binarnych.
 %build
 perl Makefile.PL
 %{__make}
-patch -p1 < %{PATCH0}
 
 %install
 rm -rf $RPM_BUILD_ROOT
