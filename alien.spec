@@ -2,7 +2,7 @@
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	8.25
+Version:	8.26
 Release:	1
 License:	GPL
 Vendor:		Joey Hess <joey@kitenet.net>
