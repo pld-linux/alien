@@ -10,10 +10,11 @@ Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
 Patch0:	alien-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
 BuildRequires: perl
-Requires: perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vendor:		Joey Hess <joey@kitenet.net>
 Buildarch:	noarch
+
+%include /usr/lib/rpm/macros.perl
 
 %description
 Alien allows you to convert Debian, Stampede and Slackware Packages
@@ -37,6 +38,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/{%{perl_sitearch},%{perl_sitelib}}
 make DESTDIR=$RPM_BUILD_ROOT install
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README
 
@@ -47,5 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz
 %attr(755,root,root) %{_bindir}/alien
-%attr(-,root,root) %{_datadir}/alien
+%{_datadir}/alien
+%{perl_sitelib}/Alien
+%{perl_sitearch}
 %{_mandir}/man*/*
