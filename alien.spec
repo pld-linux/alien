@@ -3,7 +3,7 @@ Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
 Version:	7.21
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -12,7 +12,7 @@ Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
 Vendor:		Joey Hess <joey@kitenet.net>
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
