@@ -58,5 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/alien
 %{_datadir}/alien
 %{perl_sitelib}/Alien
-%{perl_sitearch}
 %{_mandir}/man*/*
