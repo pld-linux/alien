@@ -14,8 +14,6 @@ URL:		http://kitenet.net/programs/code/alien/
 Vendor:		Joey Hess <joey@kitenet.net>
 BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
