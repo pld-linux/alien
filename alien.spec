@@ -1,7 +1,8 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	7.5
+Version:	7.6
 Release:	1
 License:	GPL
 Group:		Utilities/System
@@ -9,12 +10,13 @@ Group(pl):	Narzêdzia/System
 Source0:	http://kitenet.net/programs/code/alien/%{name}_%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/code/alien/
-BuildRequires:	perl
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vendor:		Joey Hess <joey@kitenet.net>
+BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+%requires_eq	perl
+Requires:	%{perl_sitearch}
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
-
-%include /usr/lib/rpm/macros.perl
 
 %description
 Alien allows you to convert Debian, Stampede and Slackware Packages
@@ -38,9 +40,14 @@ perl Makefile.PL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{%{perl_sitearch},%{perl_sitelib}}
+install -d $RPM_BUILD_ROOT/{%{perl_archlib},%{perl_sitelib},%{perl_sitearch}} \
+	$RPM_BUILD_ROOT%{_mandir}/man{1,3}
+	
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README
+install blib/man1/* $RPM_BUILD_ROOT%{_mandir}/man1
+install blib/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man*/* README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
