@@ -3,7 +3,7 @@ Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
 Version:	8.21
-Release:	1
+Release:	2
 License:	GPL
 Vendor:		Joey Hess <joey@kitenet.net>
 Group:		Applications/System
@@ -35,18 +35,14 @@ pakietów binarnych.
 %patch0 -p1
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{%{perl_archlib},%{perl_sitelib},%{perl_sitearch}} \
-	$RPM_BUILD_ROOT%{_mandir}/man{1,3}
-
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
-
-install blib/man1/* $RPM_BUILD_ROOT%{_mandir}/man1
-install blib/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
@@ -55,10 +51,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc README TODO
 %attr(755,root,root) %{_bindir}/alien
 %{_datadir}/alien
-%{perl_sitelib}/Alien
+%{perl_vendorlib}/Alien
 %{_mandir}/man*/*
 %lang(fr) %{_mandir}/fr/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
