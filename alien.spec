@@ -8,7 +8,7 @@ Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source0:	http://kitenet.net/programs/alien/%{name}.tar.gz
 URL:		http://kitenet.net/programs/code/alien/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vendor:		Joey Hess <joey@kitenet.net>
 Buildarch:	noarch
 
