@@ -40,7 +40,7 @@ perl Makefile.PL
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{perl_archlib},%{perl_sitelib},%{perl_sitearch}} \
 	$RPM_BUILD_ROOT%{_mandir}/man{1,3}
-	
+
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 install blib/man1/* $RPM_BUILD_ROOT%{_mandir}/man1
