@@ -14,6 +14,7 @@ Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/alien/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+Requires:	binutils
 Requires:	cpio
 Requires:	%{_bindir}/rpm2cpio
 BuildArch:	noarch
