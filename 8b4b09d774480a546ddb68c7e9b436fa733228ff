@@ -1,0 +1,2 @@
+- removed explicit requirements for perl = %{version} and %{perl_sitearch}
+  they will be added by rpm if needed
