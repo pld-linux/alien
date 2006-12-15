@@ -14,9 +14,10 @@ Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/alien/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+Requires:	/usr/bin/822-date
+Requires:	/usr/bin/rpm2cpio
 Requires:	binutils
 Requires:	cpio
-Requires:	%{_bindir}/rpm2cpio
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,10 +28,10 @@ convert into Slackware, Debian, and Stampede packages. This is a tool
 only suitable for binary packages.
 
 %description -l pl
-Alien pozwala przekonwertowaæ pakiety Debiana, Stampede oraz
-Slackware w pakiety u¿ywane w PLD, które mog± byæ zainstalowane przy
-u¿yciu rpm-a i odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla
-pakietów binarnych.
+Alien pozwala przekonwertowaæ pakiety Debiana, Stampede oraz Slackware
+w pakiety u¿ywane w PLD, które mog± byæ zainstalowane przy u¿yciu
+rpm-a i odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla pakietów
+binarnych.
 
 %prep
 %setup -q -n %{name}
