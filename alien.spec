@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Pakages converter (tgz, rpm, deb, slp)
-Summary(pl):	Konwerter pakietów (tgz, rpm, deb, slp)
+Summary(pl.UTF-8):   Konwerter pakietÃ³w (tgz, rpm, deb, slp)
 Name:		alien
 Version:	8.63
 Release:	2
@@ -27,10 +27,10 @@ into PLD packages, which can be installed with rpm. It can also
 convert into Slackware, Debian, and Stampede packages. This is a tool
 only suitable for binary packages.
 
-%description -l pl
-Alien pozwala przekonwertowaæ pakiety Debiana, Stampede oraz Slackware
-w pakiety u¿ywane w PLD, które mog± byæ zainstalowane przy u¿yciu
-rpm-a i odwrotnie. Narzêdzie to jest przydatne wy³±cznie dla pakietów
+%description -l pl.UTF-8
+Alien pozwala przekonwertowaÄ‡ pakiety Debiana, Stampede oraz Slackware
+w pakiety uÅ¼ywane w PLD, ktÃ³re mogÄ… byÄ‡ zainstalowane przy uÅ¼yciu
+rpm-a i odwrotnie. NarzÄ™dzie to jest przydatne wyÅ‚Ä…cznie dla pakietÃ³w
 binarnych.
 
 %prep
