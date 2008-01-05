@@ -15,10 +15,10 @@ Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/programs/alien/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-Requires:	/usr/bin/822-date
 Requires:	/usr/bin/rpm2cpio
 Requires:	binutils
 Requires:	cpio
+Suggests:	/usr/bin/822-date
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,6 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/alien
 %{_datadir}/alien
 %{perl_vendorlib}/Alien
-%{_mandir}/man*/*
-%lang(fr) %{_mandir}/fr/man1/*
-%lang(pl) %{_mandir}/pl/man1/*
+%{_mandir}/man1/alien.1*
+%{_mandir}/man3/Alien::Package*.3pm*
+%lang(fr) %{_mandir}/fr/man1/alien.1*
+%lang(pl) %{_mandir}/pl/man1/alien.1*
