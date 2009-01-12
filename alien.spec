@@ -12,7 +12,7 @@ Source0:	http://ftp.de.debian.org/debian/pool/main/a/alien/%{name}_%{version}.ta
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
 Patch0:		%{name}-DESTDIR.patch
-URL:		http://kitenet.net/programs/alien/
+URL:		http://kitenet.net/~joey/code/alien/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 Requires:	/usr/bin/rpm2cpio
