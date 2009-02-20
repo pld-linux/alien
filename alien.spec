@@ -2,13 +2,13 @@
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl.UTF-8):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	8.73
+Version:	8.74
 Release:	1
 License:	GPL
 Group:		Applications/System
 #Source0:	http://kitenet.net/programs/alien/%{name}_%{version}.tar.gz
 Source0:	http://ftp.de.debian.org/debian/pool/main/a/alien/%{name}_%{version}.tar.gz
-# Source0-md5:	9ff7605218ca904e1e21d5f99301c6be
+# Source0-md5:	3f049384e39e3ab79b6b298068f38f77
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
 Patch0:		%{name}-DESTDIR.patch
