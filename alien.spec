@@ -37,11 +37,11 @@ binarnych.
 %prep
 %setup -q -n %{name} -c -T
 
-exit 1
-
 %build
 
 %install
+
+exit 1
 
 %clean
 
