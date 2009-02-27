@@ -36,33 +36,14 @@ rpm-a i odwrotnie. Narzędzie to jest przydatne wyłącznie dla pakietów
 binarnych.
 
 %prep
-%setup -q -n %{name}
-%patch0 -p1
+%setup -q -n %{name} -c -T
+
+exit 1
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
-%{__make} pure_install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	PREFIX=%{_prefix}
-
-bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644,root,root,755)
-%doc debian/changelog README TODO
-%attr(755,root,root) %{_bindir}/alien
-%{_datadir}/alien
-%{perl_vendorlib}/Alien
-%{_mandir}/man1/alien.1*
-%{_mandir}/man3/Alien::Package*.3pm*
-%lang(fr) %{_mandir}/fr/man1/alien.1*
-%lang(pl) %{_mandir}/pl/man1/alien.1*
