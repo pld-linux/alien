@@ -18,7 +18,6 @@ BuildRequires:	rpm-perlprov >= 3.0.3-16
 Requires:	/usr/bin/rpm2cpio
 Requires:	binutils
 Requires:	cpio
-Suggests:	/usr/bin/822-date
 Suggests:	debhelper
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
