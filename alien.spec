@@ -11,10 +11,10 @@ Source0:	ftp://ftp.debian.org/debian/pool/main/a/alien/%{name}_%{version}.tar.gz
 # Source0-md5:	73810f65621f49dd3baa4f193302ed68
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://kitenet.net/~joey/code/alien/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-Patch0:		%{name}-DESTDIR.patch
 Requires:	/usr/bin/rpm2cpio
 Requires:	binutils
 Requires:	cpio
