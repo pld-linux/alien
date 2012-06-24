@@ -50,6 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 	PREFIX=%{_prefix}
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/README.alien-non-english-man-pages
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Alien/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
