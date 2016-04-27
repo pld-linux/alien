@@ -16,6 +16,7 @@ BuildRequires:	rpm-perlprov >= 3.0.3-16
 Requires:	/usr/bin/rpm2cpio
 Requires:	binutils
 Requires:	cpio
+Requires:	tar
 Suggests:	dpkg
 Suggests:	debhelper
 BuildArch:	noarch
