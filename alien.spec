@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl.UTF-8):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
