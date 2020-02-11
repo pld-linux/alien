@@ -5,7 +5,7 @@ Version:	8.95
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	ftp://ftp.debian.org/debian/pool/main/a/alien/%{name}_%{version}.tar.xz
+Source0:	http://ftp.debian.org/debian/pool/main/a/alien/%{name}_%{version}.tar.xz
 # Source0-md5:	4b7fcb47616593578c87102f74c20d63
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
