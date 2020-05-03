@@ -1,17 +1,20 @@
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl.UTF-8):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	8.95
+Version:	8.95.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://ftp.debian.org/debian/pool/main/a/alien/%{name}_%{version}.tar.xz
-# Source0-md5:	4b7fcb47616593578c87102f74c20d63
+# Source0-md5:	04aa1e74493271681950a216850c4e7f
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
 URL:		http://kitenet.net/~joey/code/alien/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpmbuild(macros) >= 1.745
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	/usr/bin/rpm2cpio
 Requires:	binutils
 Requires:	cpio
@@ -59,7 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc debian/changelog README TODO
 %attr(755,root,root) %{_bindir}/alien
-%{perl_vendorlib}/Alien
+%{perl_vendorlib}/Alien/Package.pm
+%{perl_vendorlib}/Alien/Package
 %{_mandir}/man1/alien.1*
 %{_mandir}/man3/Alien::Package*.3pm*
 %lang(fr) %{_mandir}/fr/man1/alien.1*
