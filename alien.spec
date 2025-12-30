@@ -1,12 +1,12 @@
 Summary:	Pakages converter (tgz, rpm, deb, slp)
 Summary(pl.UTF-8):	Konwerter pakietów (tgz, rpm, deb, slp)
 Name:		alien
-Version:	8.95.8
+Version:	8.95.9
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://ftp.debian.org/debian/pool/main/a/alien/%{name}_%{version}.tar.xz
-# Source0-md5:	ee9c3a79cbdd3c53217c410c2b75ef71
+Source0:	https://github.com/Project-OSS-Revival/alien/archive/refs/tags/%{version}.tar.gz
+# Source0-md5:	7b69e2fd96e3ee2c60a60455b25e2f24
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	44f9b3381776077447bbdb8c64d3f215
 URL:		https://joeyh.name/code/alien/
@@ -37,7 +37,7 @@ rpm-a i odwrotnie. Narzędzie to jest przydatne wyłącznie dla pakietów
 binarnych.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 %{__perl} Makefile.PL \
@@ -60,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc debian/changelog README TODO
+%doc README TODO
 %attr(755,root,root) %{_bindir}/alien
 %{perl_vendorlib}/Alien/Package.pm
 %{perl_vendorlib}/Alien/Package
